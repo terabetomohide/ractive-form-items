@@ -1,0 +1,71 @@
+{{^values.length}}
+    <p class="well well-sm">{{noQuestionsText}}</p>
+{{/values.length}}
+{{#values.length}}
+    {{#values :i}}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <strong>Q.{{i +1}} </strong>
+                <div class="btn-group btn-group-xs">
+                    <button type="button" class="btn btn-default" on-click="up:{{i}}"><span
+                            class="glyphicon glyphicon-chevron-up"></span></button>
+                    <button type="button" class="btn btn-default" on-click="down:{{i}}"><span
+                            class="glyphicon glyphicon-chevron-down"></span></button>
+                </div>
+                <button type="button" class="close" on-click="removeQuestion:{{i}}">&times;</button>
+            </div>
+            <div class="panel-body">
+                {{>ItemsSetting}}
+            </div>
+        </div>
+    {{/values}}
+{{/values.length}}
+<button class="btn btn-primary" on-click="addQuestion">
+    <span class="glyphicon glyphicon-plus-sign"></span> {{addQuestionText}}
+</button>
+
+{{#partial ItemsSetting}}
+    <Label
+            label="{{setting.title.label}}"
+    />
+    <TextForm
+            name="{{this.name}}.title"
+            val="{{this.label}}"
+    />
+    <SimpleCheck
+            name="{{this.name}}.required"
+            val="{{this.required}}"
+            on="{{setting.required.on}}"
+            off="{{setting.required.off}}"
+            defaultValue="{{setting.required.defaultValue || 0}}"
+    />
+    <Label
+            label="{{setting.type.label}}"
+    />
+    <SelectBox
+            name="{{this.name}}.type"
+            val="{{this.type}}"
+            defaultValue="{{setting.type.defaultValue}}"
+            values="{{setting.type.values}}"
+    />
+    {{#if _isSelect (this.type)}}
+        <TextArea
+                name="{{this.name}}.values"
+                label="{{setting.selectValues.label}}"
+                val="{{this.values}}"
+        />
+        <p class="text-muted">
+            <span class="glyphicon glyphicon-info-sign"></span> {{selectDescription}}
+        </p>
+    {{/if}}
+    {{#if _isSelectOther (this.type)}}
+        <TextArea
+                name="{{this.name}}.values"
+                label="{{setting.selectValues.label}}"
+                val="{{this.values}}"
+        />
+        <p class="text-muted">
+            <span class="glyphicon glyphicon-info-sign"></span> {{otherDescription}}
+        </p>
+    {{/if}}
+{{/partial}}

@@ -1,0 +1,17 @@
+<div class="form-inline">
+    <div class="input-group">
+        {{#labelBefore}}
+            <span class="input-group-addon">{{labelBefore}}</span>
+        {{/labelBefore}}
+        <select class="form-control" value="{{val}}">
+            {{#values}}
+                <option value="{{this.value}}">
+                    {{this.title}}
+                </option>
+            {{/values}}
+        </select>
+        {{#labelAfter}}
+            <span class="input-group-addon">{{labelAfter}}</span>
+        {{/labelAfter}}
+    </div>
+</div>

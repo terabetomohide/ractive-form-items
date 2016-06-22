@@ -1,0 +1,17 @@
+<div class="form-inline">
+    <select class="form-control" value="{{year}}">
+        {{#yearList}}
+            {{>options}}
+        {{/yearList}}
+    </select> 年
+    <select class="form-control" value="{{month}}">
+        {{#monthList}}
+            {{>options}}
+        {{/monthList}}
+    </select> 月
+    <select class="form-control" value="{{day}}">
+        {{#dayList}}
+            {{>options}}
+        {{/dayList}}
+    </select> 日
+</div>

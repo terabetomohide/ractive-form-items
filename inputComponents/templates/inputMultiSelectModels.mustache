@@ -1,0 +1,32 @@
+{{^model.length}}
+{{/model.length}}
+{{#model.length}}
+    {{^showList}}
+        <button class="btn btn-default" on-click="showList">
+            {{showListText}}
+        </button>
+    {{/showList}}
+    {{#showList}}
+        <button class="btn btn-default" on-click="hideList">
+            {{hideListText}}
+        </button>
+        <div class="list-group">
+            {{#model}}
+                {{^_inArray (val,this.id)}}
+                    <a intro-outro="slide" class="list-group-item" href="#"
+                       on-click="toggleList:{{id}}">{{{template (this)}}}</a>
+                {{/_inArray}}
+            {{/model:m}}
+        </div>
+    {{/showList}}
+    <div class="list-group">
+        {{#val.length}}
+            {{#val:i}}
+                {{#_findWhere (model,val[i])}}
+                    <a class="list-group-item active" href="#"
+                       on-click="toggleList:{{id}}">{{{template (this)}}}</a>
+                {{/_findWhere}}
+            {{/val:i}}
+        {{/val.length}}
+    </div>
+{{/model.length}}

@@ -1,0 +1,24 @@
+<div class="form-inline">
+    {{>hoursSelect}} {{>minutesSelect}}
+</div>
+
+{{#partial hoursSelect}}
+    <div class="input-group">
+        <select class="form-control" value="{{hours}}">
+            {{#hoursList}}{{>selectOptions}}{{/hoursList}}
+        </select>
+        <span class="input-group-addon">{{hoursAfter}}</span>
+    </div>
+{{/partial}}
+
+{{#partial minutesSelect}}
+    <div class="input-group">
+        <select class="form-control" value="{{minutes}}">
+            {{#minutesList}}{{>selectOptions}}{{/minutesList}}
+        </select>
+        <span class="input-group-addon">{{minutesAfter}}</span>
+    </div>
+{{/partial}}
+{{#partial selectOptions}}
+    <option value="{{this}}">{{this}}</option>
+{{/partial}}

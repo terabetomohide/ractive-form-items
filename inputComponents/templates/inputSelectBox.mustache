@@ -1,0 +1,12 @@
+<div class="{{#if (layout === 'horizontal')}}btn-group{{/if}}{{#if (layout === 'vertical')}}list-group{{/if}}">
+    {{#values}}
+        <button
+                type="button"
+                on-click="selectValue:{{this.value}}"
+                class="{{#if (layout === 'horizontal')}}btn btn-default{{/if}}{{#if (layout === 'vertical')}}list-group-item{{/if}} {{(this.value===val) ? 'btn btn-primary active':'btn btn-default'}}"
+                value="{{this.value}}"
+        >
+            {{this.title}}
+        </button>
+    {{/values}}
+</div>

@@ -1,0 +1,35 @@
+{{#if (type!=='hidden')}}
+    <div class="form-group {{#error}}has-error{{/error}}">
+        <div class="row">
+            {{#showLabel}}
+                <label
+                        class="{{labelClass}} {{#labelRight}}control-label{{/labelRight}}"
+                        for="{{element}}"
+                >
+                    {{>label}}
+                    {{#required *1}}
+                        {{>required}}
+                    {{/required}}
+                </label>
+            {{/showLabel}}
+            <div class="{{inputClass}}">
+                {{>description}}
+                {{^confirm}}
+                    <InputComponent
+                            type="{{this.type}}"
+                            val="{{this.val}}"
+                            name="{{this.name}}"
+                            setting="{{this.setting}}"
+                            defaultValue="{{this.defaultValue}}"
+                    />
+                    {{>error}}
+                    {{>example}}
+                    {{>note}}
+                {{/confirm}}
+                {{#confirm}}
+                    <p class="form-control-static">{{val}}</p>
+                {{/confirm}}
+            </div>
+        </div>
+    </div>
+{{/if}}

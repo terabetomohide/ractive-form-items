@@ -1,0 +1,12 @@
+<div
+        class="panel panel-{{#val *1}}success{{/}}{{^val *1}}default{{/}} fake-btn"
+        on-click="toggleValue:{{val *1}}"
+>
+    <div
+            class="panel-body {{#if (val *1)}}bg-success{{/if}}"
+    >
+        <span class="glyphicon glyphicon-{{#val *1}}ok{{/}}{{^val *1}}unchecked{{/}}"></span>
+        {{#val *1}}{{on}}{{/}}
+        {{^val *1}}{{off}}{{/}}
+    </div>
+</div>
