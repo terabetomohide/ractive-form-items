@@ -4,6 +4,11 @@
   "main": "index.js",
   "author": "tomohidex",
   "repository": "https://github.com/tomohidex/ractive-form-items.git",
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
   "devDependencies": {
     "babel-core": "^6.7.6",
     "babel-loader": "^6.2.4",
