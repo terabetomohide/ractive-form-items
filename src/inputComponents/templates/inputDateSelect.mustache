@@ -1,15 +1,15 @@
 <div class="form-inline">
-    <select class="form-control" value="{{year}}">
+    <select class="form-control" value="{{year}}" {{#disabled}}disabled{{/disabled}}>
         {{#yearList}}
             {{>options}}
         {{/yearList}}
     </select> 年
-    <select class="form-control" value="{{month}}">
+    <select class="form-control" value="{{month}}" {{#disabled}}disabled{{/disabled}}>
         {{#monthList}}
             {{>options}}
         {{/monthList}}
     </select> 月
-    <select class="form-control" value="{{day}}">
+    <select class="form-control" value="{{day}}" {{#disabled}}disabled{{/disabled}}>
         {{#dayList}}
             {{>options}}
         {{/dayList}}

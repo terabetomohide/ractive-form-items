@@ -4,7 +4,7 @@
 
 {{#partial hoursSelect}}
     <div class="input-group">
-        <select class="form-control" value="{{hours}}">
+        <select class="form-control" value="{{hours}}" {{#disabled}}disabled{{/disabled}}>
             {{#hoursList}}{{>selectOptions}}{{/hoursList}}
         </select>
         <span class="input-group-addon">{{hoursAfter}}</span>
@@ -13,7 +13,7 @@
 
 {{#partial minutesSelect}}
     <div class="input-group">
-        <select class="form-control" value="{{minutes}}">
+        <select class="form-control" value="{{minutes}}" {{#disabled}}disabled{{/disabled}}>
             {{#minutesList}}{{>selectOptions}}{{/minutesList}}
         </select>
         <span class="input-group-addon">{{minutesAfter}}</span>

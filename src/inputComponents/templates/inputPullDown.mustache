@@ -1,4 +1,4 @@
-<select class="form-control" value="{{val}}">
+<select class="form-control" value="{{val}}" {{#disabled}}disabled{{/disabled}}>
     {{#values}}
         <option value="{{this.val}}">
             {{this.title}}

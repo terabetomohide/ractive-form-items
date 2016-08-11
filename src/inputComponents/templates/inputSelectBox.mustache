@@ -5,6 +5,7 @@
                 on-click="selectValue:{{this.value}}"
                 class="{{#if (layout === 'horizontal')}}btn btn-default{{/if}}{{#if (layout === 'vertical')}}list-group-item{{/if}} {{(this.value===val) ? 'btn btn-primary active':'btn btn-default'}}"
                 value="{{this.value}}"
+                {{#disabled}}disabled{{/disabled}}
         >
             {{this.title}}
         </button>

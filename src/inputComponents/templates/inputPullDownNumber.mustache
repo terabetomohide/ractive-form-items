@@ -3,7 +3,7 @@
         {{#labelBefore}}
             <span class="input-group-addon">{{labelBefore}}</span>
         {{/labelBefore}}
-        <select class="form-control" value="{{val}}">
+        <select class="form-control" value="{{val}}" {{#disabled}}disabled{{/disabled}}>
             {{#values}}
                 <option value="{{this.value}}">
                     {{this.title}}

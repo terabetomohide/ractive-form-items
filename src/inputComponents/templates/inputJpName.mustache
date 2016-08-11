@@ -2,13 +2,13 @@
     <div class="col-xs-6">
         <div class="input-group">
             <div class="input-group-addon">{{secondNameLabel}}</div>
-            <input class="form-control" name="secondName" type="text" value="{{secondName}}">
+            <input class="form-control" name="secondName" type="text" value="{{secondName}}" {{#disabled}}disabled{{/disabled}}>
         </div>
     </div>
     <div class="col-xs-6">
         <div class="input-group">
             <div class="input-group-addon">{{firstNameLabel}}</div>
-            <input class="form-control" name="firstName" type="text" value="{{firstName}}">
+            <input class="form-control" name="firstName" type="text" value="{{firstName}}" {{#disabled}}disabled{{/disabled}}>
         </div>
     </div>
 </div>

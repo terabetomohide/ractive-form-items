@@ -14,6 +14,9 @@ module.exports = inputCommon.extend({
             },
             removeQuestion: (event, index)=> {
                 this.splice('values', index, 1)
+                if (!this.get('values')) {
+                    this.set('values', [])
+                }
             },
             up: (event, index)=> {
                 if (index > 0) {
