@@ -23,13 +23,27 @@ const components = {
 }
 
 const FormItemsComponent = Ractive.extend({
-    oninit(){
+    onrender(){
         this.on({
             'presetDefault': ()=> {
-                var defaultValue = this.get('defaultValue');
-                var val = this.get('val')
-                if ((val === null) && (defaultValue !== null)) {
+                const val = this.get('val')
+                const defaultValue = this.get('defaultValue');
+                //todo formの初期化時の空の値が3つもあるのでできればすべてnullにしたい
+                const valNotSet = ((val === undefined) || (val === null) || (val === ''))
+                const defaultExist = ((defaultValue !== undefined) && (defaultValue !== null))
+                //値が存在しないか空でかつデフォルト値が存在するとき
+                if (valNotSet && defaultExist) {
                     this.set('val', defaultValue)
+                }
+            }
+        })
+        this.observe({
+            'val': (val)=> {
+                if ((typeof val === 'undefined') || (val === null) || (val === '')) {
+                    return
+                }
+                if (this.get('selectOnce')) {
+                    this.set('disabled', true)
                 }
             }
         })
