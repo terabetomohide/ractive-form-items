@@ -1,5 +1,5 @@
 const inputCommon = require('./inputCommon')
-const inputSelectValue = require('../../../helper/inputSelectValue');
+const inputSelectValue = require('../helper/inputSelectValue');
 module.exports = inputCommon.extend({
     onrender(){
         const min = this.get('min') * 1 || 0

@@ -1,6 +1,6 @@
 let inputCommon = require('./inputCommon')
 let _ = require('lodash');
-let inputValue = require('../../../helper/inputSelectValue');
+let inputValue = require('../helper/inputSelectValue');
 let inputDateComponent = inputCommon.extend({
     oninit () {
         this.observe('year month day', function(val){

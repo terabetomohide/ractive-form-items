@@ -1,5 +1,5 @@
 const inputCommon = require('./inputCommon')
-const inputSelectValue = require('../../../helper/inputSelectValue');
+const inputSelectValue = require('../helper/inputSelectValue');
 const PullDownComponent = inputCommon.extend({
     template: require('ractive!./templates/inputPullDown.mustache'),
     data: ()=>{
